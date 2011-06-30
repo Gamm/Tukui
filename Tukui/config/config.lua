@@ -13,7 +13,7 @@ C["general"] = {
 C["unitframes"] = {
 
 	-- layout
-	["style"] = "Shag",                                 -- unitframe style, choose from ("Shag")
+	["style"] = "Shag",                                 -- unitframe style, choose from ("Shag") or ("Smelly)
 
 	-- general options
 	["enable"] = true,                                  -- do i really need to explain this?
