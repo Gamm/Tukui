@@ -13,7 +13,7 @@ C["general"] = {
 C["unitframes"] = {
 
 	-- layout
-	["style"] = "Shag",                                 -- unitframe style, choose from ("Shag") or ("Smelly)
+	["style"] = "Shag",                                 -- unitframe style, choose from ("Shag") or ("Smelly")
 
 	-- general options
 	["enable"] = true,                                  -- do i really need to explain this?
@@ -105,7 +105,7 @@ C["Addon_Skins"] = {
 	["Skada"] = false,			            			-- Enable Skada Skin
 	["Omen"] = false,				    				-- Enable Omen Skin
 	["KLE"] = false,				    				-- Enable KLE Skin
-	["DBM"] = true,										-- Enable DBM Skin. Must run "/dbmskin apply" per character in game
+	["DBM"] = false,									-- Enable DBM Skin. Must run "/dbmskin apply" per character in game
 	["TinyDPS"] = true,				    				-- Enable TinyDPS Skin
 }
 

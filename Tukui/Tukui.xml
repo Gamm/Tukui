@@ -217,6 +217,8 @@
 	<Script file="modules\skins\addons\TinyDPS.lua"/>
 	<Script file="modules\skins\addons\Quartz.lua"/>
 	<Script file="modules\skins\addons\Tukui_DBM.lua"/>
+	<Script file="modules\skins\addons\Tukui_Auctionator_Skin.lua"/>
+	<Script file="modules\skins\addons\Tukui_BigWigs.lua"/>
 	
 	<Include file="modules\unitframes\templates\tankassist.xml"/>
 	<Script file="modules\unitframes\tags\tags.lua"/>
