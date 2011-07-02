@@ -109,7 +109,7 @@ C["Addon_Skins"] = {
 	["KLE"] = false,				    				-- Enable KLE Skin
 	["DBM"] = false,									-- Enable DBM Skin. Must run "/dbmskin apply" per character in game
 	["TinyDPS"] = true,				    				-- Enable TinyDPS Skin
-	["Auctionator"] = false,							-- Enable Auctionator Skin
+	["Auctionator"] = true,							    -- Enable Auctionator Skin Must run "/tukuibigwigs apply" per character.
 	["Bigwigs"] = true,									-- Enable Bigiwgs Skin
 }
 
