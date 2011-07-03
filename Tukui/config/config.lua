@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...)) -- Import: T - functions, constants, vari
 
 C["general"] = {
 	["autoscale"] = false,                              -- mainly enabled for users that don't want to mess with the config file
-	["uiscale"] = .7111111,                                 -- set your value (between 0.64 and 1) of your uiscale if autoscale is off
+	["uiscale"] = 0.70,                                 -- set your value (between 0.64 and 1) of your uiscale if autoscale is off
 	["overridelowtohigh"] = false,                      -- EXPERIMENTAL ONLY! override lower version to higher version on a lower reso.
 	["multisampleprotect"] = false,                     -- i don't recommend this because of shitty border but, voila!
 	["backdropcolor"] = { .05, .05, .05},            	-- default backdrop color of panels
@@ -73,7 +73,7 @@ C["unitframes"] = {
 	
 	-- class bar
 	["classbar"] = true,				    			-- enable tukui classbar over player unit. Must be enabled if you want any individual classbars enabled.
-		["druid"] = false,								-- enable druid only classbar
+		["druid"] = true,								-- enable druid only classbar
 		["deathknight"] = true,							-- enable deathknight only classbar
 		["shaman"] = true,								-- enable shaman only classbar
 }
@@ -95,7 +95,7 @@ C["actionbar"] = {
 	["buttonsize"] = 27,                                -- normal buttons size
 	["petbuttonsize"] = 26,                             -- pet & stance buttons size
 	["buttonspacing"] = 3,                              -- buttons spacing
-	["mainbarWidth"] = 7,				    			-- amount of buttons per row on main bar (set between 1-12)
+	["mainbarWidth"] = 12,				    			-- amount of buttons per row on main bar (set between 1-12)
 	["sidebarWidth"] = 6,				    			-- amount of buttons per row on side bars (set between 0-6, 0 = disabled)
 	["bgPanel"] = true,				    				-- enable background panels for actionbars
 }
@@ -113,9 +113,9 @@ C["Addon_Skins"] = {
 	["Skada"] = false,			            			-- Enable Skada Skin
 	["Omen"] = false,				    				-- Enable Omen Skin
 	["KLE"] = false,				    				-- Enable KLE Skin
-	["DBM"] = true,										-- Enable DBM Skin. Must run "/dbmskin apply" per character in game
+	["DBM"] = false,										-- Enable DBM Skin. Must run "/dbmskin apply" per character in game
 	["TinyDPS"] = true,				    				-- Enable TinyDPS Skin
-	["Auctionator"] = false,							-- Enable Auctionator Skin
+	["Auctionator"] = true,							-- Enable Auctionator Skin
 	["Bigwigs"] = true,									-- Enable Bigiwgs Skin
 }
 
@@ -176,10 +176,10 @@ C["datatext"] = {
 	["specswitcher"] = 1,				    			-- show current spec and allows mouse-click spec change. Set to position 1 for best results.
 		
 	-- Color Datatext
-	["classcolored"] = false,			    			-- classcolored datatext
+	["classcolored"] = true,			    			-- classcolored datatext
 	["color"] = {0, 1, 0},					    		-- datatext color (if classcolored = false)
 	-- Color Panel Text
-	["classpanel"] = false,								-- set the extra panels to class colored
+	["classpanel"] = true,								-- set the extra panels to class colored
 	["statcolor"] = {0, 1, 0},							-- color of extra panels if classpanel is False
 	
 	["battleground"] = true,                            -- enable 3 stats in battleground only that replace stat1,stat2,stat3.
@@ -210,10 +210,10 @@ C["nameplate"] = {
 
 C["tooltip"] = {
 	["enable"] = true,                                  -- true to enable this mod, false to disable
-	["hidecombat"] = false,                             -- hide bottom-right tooltip when in combat
+	["hidecombat"] = true,                             -- hide bottom-right tooltip when in combat
 	["hidebuttons"] = true,                             -- always hide action bar buttons tooltip.
 	["hideuf"] = false,                                 -- hide tooltip on unitframes
-	["cursor"] = true,                                  -- tooltip via cursor only
+	["cursor"] = false,                                  -- tooltip via cursor only
 }
 
 C["merchant"] = {
