@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...)) -- Import: T - functions, constants, vari
 
 C["general"] = {
 	["autoscale"] = false,                              -- mainly enabled for users that don't want to mess with the config file
-	["uiscale"] = 0.70,                                 -- set your value (between 0.64 and 1) of your uiscale if autoscale is off
+	["uiscale"] = .7111111,                                 -- set your value (between 0.64 and 1) of your uiscale if autoscale is off
 	["overridelowtohigh"] = false,                      -- EXPERIMENTAL ONLY! override lower version to higher version on a lower reso.
 	["multisampleprotect"] = false,                     -- i don't recommend this because of shitty border but, voila!
 	["backdropcolor"] = { .05, .05, .05},            	-- default backdrop color of panels
@@ -33,7 +33,7 @@ C["unitframes"] = {
 	["totdebuffs"] = false,                             -- enable tot debuffs (high reso only)
 	["showtotalhpmp"] = false,                          -- change the display of info text on player and target with XXXX/Total.
 	["showsmooth"] = true,                              -- enable smooth bar
-	["charportrait"] = false,                           -- you do not want to turn it off if you are using "Asphyxia" or "Asphyxia2" style.
+	["charportrait"] = false,                           -- little baby portraits
 	["classicon"] = false,								-- option to enable class icon on player/target
 	["showfocustarget"] = true,							-- Do you want to see the focus' target?
 	["showpettarget"] = true,							-- Do you want to see zee pet's target?
@@ -73,7 +73,7 @@ C["unitframes"] = {
 	
 	-- class bar
 	["classbar"] = true,				    			-- enable tukui classbar over player unit. Must be enabled if you want any individual classbars enabled.
-		["druid"] = true,								-- enable druid only classbar
+		["druid"] = false,								-- enable druid only classbar
 		["deathknight"] = true,							-- enable deathknight only classbar
 		["shaman"] = true,								-- enable shaman only classbar
 }
@@ -95,9 +95,15 @@ C["actionbar"] = {
 	["buttonsize"] = 27,                                -- normal buttons size
 	["petbuttonsize"] = 26,                             -- pet & stance buttons size
 	["buttonspacing"] = 3,                              -- buttons spacing
-	["mainbarWidth"] = 12,				    			-- amount of buttons per row on main bar (set between 1-12)
+	["mainbarWidth"] = 7,				    			-- amount of buttons per row on main bar (set between 1-12)
 	["sidebarWidth"] = 6,				    			-- amount of buttons per row on side bars (set between 0-6, 0 = disabled)
 	["bgPanel"] = true,				    				-- enable background panels for actionbars
+}
+
+C["castbar"] = { 
+	["classcolor"] = false, 							-- classcolor
+	["castbarcolor"] = { 1, 1, 0, 1 }, 					-- color if classcolor = false
+	["nointerruptcolor"] = { 1, 0, 0, 1 }, 				-- color of casts which can't be interrupted
 }
 
 C["Addon_Skins"] = {
@@ -107,15 +113,15 @@ C["Addon_Skins"] = {
 	["Skada"] = false,			            			-- Enable Skada Skin
 	["Omen"] = false,				    				-- Enable Omen Skin
 	["KLE"] = false,				    				-- Enable KLE Skin
-	["DBM"] = false,									-- Enable DBM Skin. Must run "/dbmskin apply" per character in game
+	["DBM"] = true,										-- Enable DBM Skin. Must run "/dbmskin apply" per character in game
 	["TinyDPS"] = true,				    				-- Enable TinyDPS Skin
-	["Auctionator"] = true,							    -- Enable Auctionator Skin Must run "/tukuibigwigs apply" per character.
+	["Auctionator"] = false,							-- Enable Auctionator Skin
 	["Bigwigs"] = true,									-- Enable Bigiwgs Skin
 }
 
 C["sCombo"] = {
 	["enable"] = true,				    				-- Enable sCombo-Addon for combopoints instead of default cp-display
-	["energybar"] = false,				    			-- show energy-Bar below cp bar
+	["energybar"] = true,				    			-- show energy-Bar below cp bar
 }
 
 
@@ -170,10 +176,10 @@ C["datatext"] = {
 	["specswitcher"] = 1,				    			-- show current spec and allows mouse-click spec change. Set to position 1 for best results.
 		
 	-- Color Datatext
-	["classcolored"] = true,			    			-- classcolored datatext
+	["classcolored"] = false,			    			-- classcolored datatext
 	["color"] = {0, 1, 0},					    		-- datatext color (if classcolored = false)
 	-- Color Panel Text
-	["classpanel"] = true,								-- set the extra panels to class colored
+	["classpanel"] = false,								-- set the extra panels to class colored
 	["statcolor"] = {0, 1, 0},							-- color of extra panels if classpanel is False
 	
 	["battleground"] = true,                            -- enable 3 stats in battleground only that replace stat1,stat2,stat3.
@@ -204,15 +210,16 @@ C["nameplate"] = {
 
 C["tooltip"] = {
 	["enable"] = true,                                  -- true to enable this mod, false to disable
-	["hidecombat"] = true,                             -- hide bottom-right tooltip when in combat
+	["hidecombat"] = false,                             -- hide bottom-right tooltip when in combat
 	["hidebuttons"] = true,                             -- always hide action bar buttons tooltip.
 	["hideuf"] = false,                                 -- hide tooltip on unitframes
-	["cursor"] = false,                                  -- tooltip via cursor only
+	["cursor"] = true,                                  -- tooltip via cursor only
 }
 
 C["merchant"] = {
 	["sellgrays"] = true,                               -- automaticly sell grays?
 	["autorepair"] = false,                             -- automaticly repair?
+	["guildrepair"] = true,								-- automatically use guild funds to repair (if available)
 	["sellmisc"] = false,                               -- sell defined items automatically
 }
 
