@@ -33,7 +33,7 @@ C["unitframes"] = {
 	["totdebuffs"] = false,                             -- enable tot debuffs (high reso only)
 	["showtotalhpmp"] = false,                          -- change the display of info text on player and target with XXXX/Total.
 	["showsmooth"] = true,                              -- enable smooth bar
-	["charportrait"] = false,                           -- little baby portraits
+	["charportrait"] = true,                           -- little baby portraits
 	["classicon"] = false,								-- option to enable class icon on player/target
 	["showfocustarget"] = true,							-- Do you want to see the focus' target?
 	["showpettarget"] = true,							-- Do you want to see zee pet's target?
@@ -101,7 +101,7 @@ C["actionbar"] = {
 }
 
 C["castbar"] = { 
-	["classcolor"] = false, 							-- classcolor
+	["classcolor"] = true, 							-- classcolor
 	["castbarcolor"] = { 1, 1, 0, 1 }, 					-- color if classcolor = false
 	["nointerruptcolor"] = { 1, 0, 0, 1 }, 				-- color of casts which can't be interrupted
 }
