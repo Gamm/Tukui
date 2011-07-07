@@ -102,7 +102,7 @@ C["actionbar"] = {
 
 C["castbar"] = { 
 	["classcolor"] = true, 							-- classcolor
-	["castbarcolor"] = { 1, 1, 0, 1 }, 					-- color if classcolor = false
+	["castbarcolor"] = { 1, .9, 0, 1 }, 					-- color if classcolor = false
 	["nointerruptcolor"] = { 1, 0, 0, 1 }, 				-- color of casts which can't be interrupted
 }
 
@@ -119,6 +119,10 @@ C["Addon_Skins"] = {
 	["Bigwigs"] = true,									-- Enable Bigiwgs Skin
 }
 
+C["im"] = {	--Integrated Modules						
+	["acpheight"] = 525,								-- addon control panel height
+	["acpwidth"] = 370,									-- addon control panel width
+}
 C["sCombo"] = {
 	["enable"] = true,				    				-- Enable sCombo-Addon for combopoints instead of default cp-display
 	["energybar"] = true,				    			-- show energy-Bar below cp bar
@@ -183,6 +187,7 @@ C["datatext"] = {
 	["statcolor"] = {0, 1, 0},							-- color of extra panels if classpanel is False
 	
 	["battleground"] = true,                            -- enable 3 stats in battleground only that replace stat1,stat2,stat3.
+	["bgannouncer"] = true,								-- enable an announcer mod for BGs
 	["time24"] = false,                                 -- set time to 24h format.
 	["localtime"] = true,                               -- set time to local time instead of server time.
 	["fontsize"] = 10,                                  -- font size for panels.
@@ -205,6 +210,7 @@ C["nameplate"] = {
 	["goodcolor"] = {75/255,  175/255, 76/255},	    	-- good threat color (tank shows this with threat, everyone else without)
 	["badcolor"] = {0.78, 0.25, 0.25},	 	    		-- bad threat color (opposite of above)
 	["transitioncolor"] = {218/255, 197/255, 92/255},   -- threat color when gaining threat
+	["trackauras"] = true,								-- track auras on nameplates
 }
 
 
