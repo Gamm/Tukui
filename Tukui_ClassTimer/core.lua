@@ -147,8 +147,14 @@ local TRINKET_FILTER = {
 		CreateSpellEntry( 89182 ), -- Tsunami
 		--CreateSpellEntry( 89091 ), -- Volcano
 		
+		--Scopes
+		CreateSpellEntry( 99621, false, {0.72, 0, 0, 1} ), --Flintlock's Woodchucker
+		
 		--Valor Vendor
 		CreateSpellEntry( 92104, false, {0.12, 0.56, 1, 1} ), -- River of Death (Fluid Death)
+		
+		--Firelands
+		CreateSpellEntry( 96911, false, {0.12, 0.56, 1, 1} ), --Devour (The Hungerer) 
 		
 		--Baradin Hold
 		CreateSpellEntry( 92222, false, {0.72, 0, 0, 1} ), -- Mirror Of Broken Images
