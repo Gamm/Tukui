@@ -12,7 +12,7 @@ local font2 = C["media"].uffont
 local font1 = C["media"].font
 local font = C["media"].pixelfont
 local normTex = C["media"].normTex
-local empathTex = C["media"].empath2
+local empathTex = C["media"].empath
 
 local function Shared(self, unit)
 	self.colors = T.oUF_colors
@@ -30,7 +30,7 @@ local function Shared(self, unit)
 	health:SetPoint("TOPRIGHT")
 	health:Height(33*T.raidscale)
 	if C["unitframes"].style == "Shag" then
-	health:SetStatusBarTexture(normTex)
+	health:SetStatusBarTexture(empathTex)
 	elseif C["unitframes"].style == "Smelly" then
 	health:SetStatusBarTexture(empathTex)
 	end
@@ -71,7 +71,7 @@ local function Shared(self, unit)
 	power:Point("TOPLEFT", self.Health, "BOTTOMLEFT", 2, 4)
 	power:Point("TOPRIGHT", self.Health, "BOTTOMRIGHT", -2, 4)
 	if C["unitframes"].style == "Shag" then
-	power:SetStatusBarTexture(normTex)
+	power:SetStatusBarTexture(empathTex)
 	elseif C["unitframes"].style == "Smelly" then
 	power:SetStatusBarTexture(empathTex)
 	end
@@ -204,14 +204,14 @@ local function Shared(self, unit)
 		mhpb:SetPoint('TOPLEFT', self.Health:GetStatusBarTexture(), 'TOPRIGHT', 0, 0)
 		mhpb:SetPoint('BOTTOMLEFT', self.Health:GetStatusBarTexture(), 'BOTTOMRIGHT', 0, 0)
 		mhpb:SetWidth(150*T.raidscale)
-		mhpb:SetStatusBarTexture(normTex)
+		mhpb:SetStatusBarTexture(empathTex)
 		mhpb:SetStatusBarColor(0, 1, 0.5, 0.25)
 
 		local ohpb = CreateFrame('StatusBar', nil, self.Health)
 		ohpb:SetPoint('TOPLEFT', mhpb:GetStatusBarTexture(), 'TOPRIGHT', 0, 0)
 		ohpb:SetPoint('BOTTOMLEFT', mhpb:GetStatusBarTexture(), 'BOTTOMRIGHT', 0, 0)
 		ohpb:SetWidth(150*T.raidscale)
-		ohpb:SetStatusBarTexture(normTex)
+		ohpb:SetStatusBarTexture(empathTex)
 		ohpb:SetStatusBarColor(0, 1, 0, 0.25)
 
 		self.HealPrediction = {
