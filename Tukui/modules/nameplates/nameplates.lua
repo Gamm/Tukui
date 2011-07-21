@@ -3,7 +3,7 @@ local T, C, L = unpack(select(2, ...)) -- Import Functions/Constants, Config, Lo
 --Base code by Dawn (dNameplates), rewritten by Elv22
 if not C["nameplate"].enable == true then return end
 
-local TEXTURE = C["media"].normTex
+local TEXTURE = C["media"].empath
 local FONT = C["media"].pixelfont2
 local FONTSIZE = 10
 local FONTFLAG = "MONOCHROMEOUTLINE"

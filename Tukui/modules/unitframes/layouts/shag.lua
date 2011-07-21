@@ -19,6 +19,7 @@ local normTex = C["media"].normTex
 local glowTex = C["media"].glowTex
 local bubbleTex = C["media"].bubbleTex
 local blankTex = C["media"].blank
+local empathTex = C["media"].empath
 
 
 local backdrop = {
@@ -71,7 +72,7 @@ local function Shared(self, unit)
 	local health = CreateFrame('StatusBar', nil, self)
 	health:SetPoint("TOPLEFT")
 	health:SetPoint("TOPRIGHT")
-	health:SetStatusBarTexture(normTex)
+	health:SetStatusBarTexture(empathTex)
 	health:SetFrameStrata("LOW")
 	self.Health = health
 	
@@ -85,7 +86,7 @@ local function Shared(self, unit)
 	local power = CreateFrame('StatusBar', nil, self)
 	power:Point("BOTTOMLEFT", health, "BOTTOMLEFT", 4, 2)
 	power:Point("BOTTOMRIGHT", health, "BOTTOMRIGHT", -4, 2)
-	power:SetStatusBarTexture(normTex)
+	power:SetStatusBarTexture(empathTex)
 	
 	self.Power = power
 
@@ -530,10 +531,10 @@ local function Shared(self, unit)
 		if (C["unitframes"].unitcastbar == true) then
 			-- castbar of player and target
 			local castbar = CreateFrame("StatusBar", self:GetName().."CastBar", self)
-			castbar:SetStatusBarTexture(blankTex)
+			castbar:SetStatusBarTexture(empathTex)
 			castbar.bg = castbar:CreateTexture(nil, "BORDER")
 			castbar.bg:SetAllPoints(castbar)
-			castbar.bg:SetTexture(blankTex)
+			castbar.bg:SetTexture(empathTex)
 			castbar.bg:SetVertexColor(.05, .05, .05)
 			
 			if unit == "player" then
