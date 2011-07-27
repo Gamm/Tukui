@@ -19,7 +19,7 @@ local normTex = C["media"].normTex
 local glowTex = C["media"].glowTex
 local bubbleTex = C["media"].bubbleTex
 local blankTex = C["media"].blank
-local empathTex = C["media"].empath
+local empathTex = C["media"].empath2
 
 
 local backdrop = {
@@ -72,7 +72,7 @@ local function Shared(self, unit)
 	local health = CreateFrame('StatusBar', nil, self)
 	health:SetPoint("TOPLEFT")
 	health:SetPoint("TOPRIGHT")
-	health:SetStatusBarTexture(empathTex)
+	health:SetStatusBarTexture(normTex)
 	health:SetFrameStrata("LOW")
 	self.Health = health
 	
@@ -86,7 +86,7 @@ local function Shared(self, unit)
 	local power = CreateFrame('StatusBar', nil, self)
 	power:Point("BOTTOMLEFT", health, "BOTTOMLEFT", 4, 2)
 	power:Point("BOTTOMRIGHT", health, "BOTTOMRIGHT", -4, 2)
-	power:SetStatusBarTexture(empathTex)
+	power:SetStatusBarTexture(normTex)
 	
 	self.Power = power
 
@@ -531,12 +531,13 @@ local function Shared(self, unit)
 		if (C["unitframes"].unitcastbar == true) then
 			-- castbar of player and target
 			local castbar = CreateFrame("StatusBar", self:GetName().."CastBar", self)
-			castbar:SetStatusBarTexture(empathTex)
+			castbar:SetStatusBarTexture(blankTex)
 			castbar.bg = castbar:CreateTexture(nil, "BORDER")
+			castbar.bg:CreateBorder()
 			castbar.bg:SetAllPoints(castbar)
-			castbar.bg:SetTexture(empathTex)
+			castbar.bg:SetTexture(blankTex)
 			castbar.bg:SetVertexColor(.05, .05, .05)
-			
+						
 			if unit == "player" then
 				if C["unitframes"].cbicons == true then
 					castbar:SetWidth(320)
@@ -560,9 +561,7 @@ local function Shared(self, unit)
 			castbar.border = CreateFrame("Frame", nil, castbar)
 			castbar.border:CreatePanel("Default",1,1,"TOPLEFT", castbar, "TOPLEFT", -2, 2)
 			castbar.border:SetBackdropColor(0,0,0,1)
-			--castbar.border:CreateShadow("Default")
 			castbar.border:Point("BOTTOMRIGHT", castbar, "BOTTOMRIGHT", 2, -2)
-			--castbar.border:SetBackdropBorderColor(unpack(C["media"].altbordercolor))
 			castbar.CustomTimeText = T.CustomCastTimeText
 			castbar.CustomDelayText = T.CustomCastDelayText
 			castbar.PostCastStart = T.PostCastStart
@@ -586,9 +585,8 @@ local function Shared(self, unit)
 				end
 				castbar.button:SetTemplate("Default")
 				castbar.button:SetBackdropColor(0,0,0,1)
-				--castbar.button:CreateShadow("Default")
 				castbar.button:SetPoint("RIGHT",castbar,"LEFT", -5, 0)
-
+				castbar.button:CreateBorder()
 				castbar.icon = castbar.button:CreateTexture(nil, "ARTWORK")
 				castbar.icon:Point("TOPLEFT", castbar.button, 2, -2)
 				castbar.icon:Point("BOTTOMRIGHT", castbar.button, -2, 2)
