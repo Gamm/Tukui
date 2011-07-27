@@ -19,7 +19,7 @@ local normTex = C["media"].normTex
 local glowTex = C["media"].glowTex
 local bubbleTex = C["media"].bubbleTex
 local blankTex = C["media"].blank
-local empathTex = C["media"].empath2
+local empathTex = C["media"].empath
 
 
 local backdrop = {
@@ -72,7 +72,7 @@ local function Shared(self, unit)
 	local health = CreateFrame('StatusBar', nil, self)
 	health:SetPoint("TOPLEFT")
 	health:SetPoint("TOPRIGHT")
-	health:SetStatusBarTexture(normTex)
+	health:SetStatusBarTexture(empathTex)
 	health:SetFrameStrata("LOW")
 	self.Health = health
 	
@@ -86,13 +86,13 @@ local function Shared(self, unit)
 	local power = CreateFrame('StatusBar', nil, self)
 	power:Point("BOTTOMLEFT", health, "BOTTOMLEFT", 4, 2)
 	power:Point("BOTTOMRIGHT", health, "BOTTOMRIGHT", -4, 2)
-	power:SetStatusBarTexture(normTex)
+	power:SetStatusBarTexture(empathTex)
 	
 	self.Power = power
 
 	local powerBG = power:CreateTexture(nil, 'BORDER')
 	powerBG:SetAllPoints(power)
-	powerBG:SetTexture(blankTex)
+	powerBG:SetTexture(empathTex)
 	powerBG.multiplier = 0.3
 	self.Power.bg = powerBG
 	
@@ -196,7 +196,7 @@ local function Shared(self, unit)
 			ws:Height(2)
 			ws:Point("BOTTOMLEFT", power, "TOPLEFT", 0, 1)
 			ws:Point("BOTTOMRIGHT", power, "TOPRIGHT", 0, 1)
-			ws:SetStatusBarTexture(blankTex)
+			ws:SetStatusBarTexture(empathTex)
 			ws:GetStatusBarTexture():SetHorizTile(false)
 			ws:SetBackdrop(backdrop)
 			ws:SetBackdropColor(unpack(C.media.backdropcolor))
@@ -263,14 +263,14 @@ local function Shared(self, unit)
 					local lunarBar = CreateFrame('StatusBar', nil, eclipseBar)
 					lunarBar:SetPoint('LEFT', eclipseBar, 'LEFT', 0, 0)
 					lunarBar:SetSize(eclipseBar:GetWidth(), eclipseBar:GetHeight())
-					lunarBar:SetStatusBarTexture(blankTex)
+					lunarBar:SetStatusBarTexture(empathTex)
 					lunarBar:SetStatusBarColor(.30, .52, .90)
 					eclipseBar.LunarBar = lunarBar
 
 					local solarBar = CreateFrame('StatusBar', nil, eclipseBar)
 					solarBar:SetPoint('LEFT', lunarBar:GetStatusBarTexture(), 'RIGHT', 0, 0)
 					solarBar:SetSize(eclipseBar:GetWidth(), eclipseBar:GetHeight())
-					solarBar:SetStatusBarTexture(blankTex)
+					solarBar:SetStatusBarTexture(empathTex)
 					solarBar:SetStatusBarColor(.80, .82,  .60)
 					eclipseBar.SolarBar = solarBar
 
@@ -309,7 +309,7 @@ local function Shared(self, unit)
 					for i = 1, 3 do					
 						bars[i]=CreateFrame("StatusBar", self:GetName().."_Shard"..i, bars)
 						bars[i]:Height(2)					
-						bars[i]:SetStatusBarTexture(blankTex)
+						bars[i]:SetStatusBarTexture(empathTex)
 						bars[i]:GetStatusBarTexture():SetHorizTile(false)
 						
 						if T.myclass == "WARLOCK" then
@@ -366,7 +366,7 @@ local function Shared(self, unit)
                     Runes[i]:SetPoint("LEFT", Runes[i-1], "RIGHT", T.Scale(5), 0)
 					Runes[i]:SetWidth(T.Scale(176 /6))
                     end
-                    Runes[i]:SetStatusBarTexture(blankTex)
+                    Runes[i]:SetStatusBarTexture(empathTex)
                     Runes[i]:GetStatusBarTexture():SetHorizTile(false)
 					Runes[i]:SetBackdrop(backdrop)
                     Runes[i]:SetBackdropColor(0,0,0)
@@ -374,7 +374,7 @@ local function Shared(self, unit)
                     
                     Runes[i].bg = Runes[i]:CreateTexture(nil, "BORDER")
                     Runes[i].bg:SetAllPoints(Runes[i])
-                    Runes[i].bg:SetTexture(blankTex)
+                    Runes[i].bg:SetTexture(empathTex)
                     Runes[i].bg.multiplier = 0.3
 					
 					Runes[i].border = CreateFrame("Frame", nil, Runes[i])
@@ -402,7 +402,7 @@ local function Shared(self, unit)
 					TotemBar[i]:Point("BOTTOMLEFT", health, "TOPLEFT", 12, 6)					else
 					TotemBar[i]:SetPoint("TOPLEFT", TotemBar[i-1], "TOPRIGHT", T.Scale(7), 0)
 					end
-					TotemBar[i]:SetStatusBarTexture(blankTex)
+					TotemBar[i]:SetStatusBarTexture(empathTex)
 					TotemBar[i]:SetHeight(T.Scale(5))
 					TotemBar[i]:SetWidth(T.Scale(180) / 4)
 					TotemBar[i]:SetFrameLevel(4)
@@ -413,7 +413,7 @@ local function Shared(self, unit)
 
 					TotemBar[i].bg = TotemBar[i]:CreateTexture(nil, "BORDER")
 					TotemBar[i].bg:SetAllPoints(TotemBar[i])
-					TotemBar[i].bg:SetTexture(blankTex)
+					TotemBar[i].bg:SetTexture(empathTex)
 					TotemBar[i].bg.multiplier = 0.2
 					
 					TotemBar[i].border = CreateFrame("Frame", nil, TotemBar[i])
@@ -531,11 +531,11 @@ local function Shared(self, unit)
 		if (C["unitframes"].unitcastbar == true) then
 			-- castbar of player and target
 			local castbar = CreateFrame("StatusBar", self:GetName().."CastBar", self)
-			castbar:SetStatusBarTexture(blankTex)
+			castbar:SetStatusBarTexture(empathTex)
 			castbar.bg = castbar:CreateTexture(nil, "BORDER")
 			castbar.bg:CreateBorder()
 			castbar.bg:SetAllPoints(castbar)
-			castbar.bg:SetTexture(blankTex)
+			castbar.bg:SetTexture(empathTex)
 			castbar.bg:SetVertexColor(.05, .05, .05)
 						
 			if unit == "player" then
@@ -596,7 +596,7 @@ local function Shared(self, unit)
 			-- cast bar latency on player
 			if unit == "player" and C["unitframes"].cblatency == true then
 				castbar.safezone = castbar:CreateTexture(nil, "ARTWORK")
-				castbar.safezone:SetTexture(blankTex)
+				castbar.safezone:SetTexture(empathTex)
 				castbar.safezone:SetVertexColor(0.8, 0.2, 0.2, 0.75)
 				castbar.SafeZone = castbar.safezone
 			end
@@ -645,7 +645,7 @@ local function Shared(self, unit)
 			else
 				mhpb:SetWidth(250)
 			end
-			mhpb:SetStatusBarTexture(blankTex)
+			mhpb:SetStatusBarTexture(empathTex)
 			mhpb:SetStatusBarColor(0, 1, 0.5, 0.25)
 			mhpb:SetMinMaxValues(0,1)
 
@@ -653,7 +653,7 @@ local function Shared(self, unit)
 			ohpb:SetPoint('TOPLEFT', mhpb:GetStatusBarTexture(), 'TOPRIGHT', 0, 0)
 			ohpb:SetPoint('BOTTOMLEFT', mhpb:GetStatusBarTexture(), 'BOTTOMRIGHT', 0, 0)
 			ohpb:SetWidth(250)
-			ohpb:SetStatusBarTexture(blankTex)
+			ohpb:SetStatusBarTexture(empathTex)
 			ohpb:SetStatusBarColor(0, 1, 0, 0.25)
 
 			self.HealPrediction = {
@@ -810,7 +810,7 @@ local function Shared(self, unit)
 		castbar:SetPoint("BOTTOM", 0, -15)
 		end
 				
-		castbar:SetStatusBarTexture(blankTex)
+		castbar:SetStatusBarTexture(empathTex)
 		castbar:SetFrameLevel(6)
 		
 		castbar.bg = CreateFrame("Frame", nil, castbar)
@@ -899,7 +899,7 @@ local function Shared(self, unit)
 		castbar:SetPoint("BOTTOM", 0, -15)
 		
 		castbar:SetHeight(16)
-		castbar:SetStatusBarTexture(blankTex)
+		castbar:SetStatusBarTexture(empathTex)
 		castbar:SetFrameLevel(6)
 		
 		castbar.bg = CreateFrame("Frame", nil, castbar)
@@ -1065,7 +1065,7 @@ local function Shared(self, unit)
 		castbar:SetPoint("BOTTOM", 0, -15)
 		
 		castbar:SetHeight(16)
-		castbar:SetStatusBarTexture(blankTex)
+		castbar:SetStatusBarTexture(empathTex)
 		castbar:SetFrameLevel(6)
 		
 		castbar.bg = CreateFrame("Frame", nil, castbar)
@@ -1123,7 +1123,7 @@ local function Shared(self, unit)
 		health:Height(20)
 		health:SetPoint("TOPLEFT")
 		health:SetPoint("TOPRIGHT")
-		health:SetStatusBarTexture(blankTex)
+		health:SetStatusBarTexture(empathTex)
 		
 		local healthBG = health:CreateTexture(nil, 'BORDER')
 		healthBG:SetAllPoints()
