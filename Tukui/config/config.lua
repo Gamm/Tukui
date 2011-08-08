@@ -71,7 +71,7 @@ C["unitframes"] = {
 	
 	-- class bar
 	["classbar"] = true,				    			-- enable tukui classbar over player unit. Must be enabled if you want any individual classbars enabled.
-		["druid"] = false,								-- enable druid only classbar
+		["druid"] = true,								-- enable druid only classbar
 		["deathknight"] = true,							-- enable deathknight only classbar
 		["shaman"] = true,								-- enable shaman only classbar
 }
@@ -94,7 +94,7 @@ C["actionbar"] = {
 	["petbuttonsize"] = 26,                             -- pet & stance buttons size
 	["buttonspacing"] = 3,                              -- buttons spacing
 	["mainbarWidth"] = 12,				    			-- amount of buttons per row on main bar (set between 1-12)
-	["sidebarWidth"] = 3,				    			-- amount of buttons per row on side bars (set between 0-6, 0 = disabled)
+	["sidebarWidth"] = 6,				    			-- amount of buttons per row on side bars (set between 0-6, 0 = disabled)
 	["bgPanel"] = true,				    				-- enable background panels for actionbars
 	["microbar"] = false,                				-- enable microbar display
 	["mousemicro"] = false,            					-- only show microbar on mouseover
@@ -175,10 +175,10 @@ C["datatext"] = {
 	["specswitcher"] = 1,				    			-- show current spec and allows mouse-click spec change. Set to position 1 for best results.
 		
 	-- Color Datatext
-	["classcolored"] = false,			    			-- classcolored datatext
+	["classcolored"] = true,			    			-- classcolored datatext
 	["color"] = {0, 1, 0},					    		-- datatext color (if classcolored = false)
 	-- Color Panel Text
-	["classpanel"] = false,								-- set the extra panels to class colored
+	["classpanel"] = true,								-- set the extra panels to class colored
 	["statcolor"] = {0, 1, 0},							-- color of extra panels if classpanel is False
 	
 	["battleground"] = true,                            -- enable 3 stats in battleground only that replace stat1,stat2,stat3.
@@ -210,16 +210,16 @@ C["nameplate"] = {
 
 C["tooltip"] = {
 	["enable"] = true,                                  -- true to enable this mod, false to disable
-	["hidecombat"] = false,                             -- hide bottom-right tooltip when in combat
+	["hidecombat"] = true,                             -- hide bottom-right tooltip when in combat
 	["hidebuttons"] = true,                             -- always hide action bar buttons tooltip.
 	["hideuf"] = false,                                 -- hide tooltip on unitframes
-	["cursor"] = true,                                  -- tooltip via cursor only
+	["cursor"] = false,                                  -- tooltip via cursor only
 	["whotargetting"] = false,							-- show who is targetting the unit
 }
 
 C["merchant"] = {
 	["sellgrays"] = true,                               -- automaticly sell grays?
-	["autorepair"] = false,                             -- automaticly repair?
+	["autorepair"] = true,                             -- automaticly repair?
 	["guildrepair"] = true,								-- automatically use guild funds to repair (if available)
 	["sellmisc"] = false,                               -- sell defined items automatically
 }
