@@ -18,6 +18,7 @@
 	<Script file="config\profiles.lua"/>
 	<Script file="medias\medias.lua"/>	
 	<Script file="core\configui.lua"/>
+	<Script file="modules\skins\core.lua"/>
 		
 	<Include file="modules\unitframes\core\oUF\oUF.xml"/>
 	<Script file="modules\unitframes\plugins\oUF_AuraWatch\oUF_AuraWatch.lua"/>
@@ -137,8 +138,7 @@
 	<Script file="modules\chat\copychat.lua"/>
 	<Script file="modules\chat\mousescroll.lua"/>
 	<Script file="modules\chat\sounds.lua"/>
-	<Script file="modules\chat\blizzfixrealidlink.lua"/>
-	
+		
 	<Script file="modules\tooltip\tooltip.lua"/>
 	<Script file="modules\nameplates\nameplates.lua"/>
 	<Script file="modules\bags\bags.lua"/>
@@ -151,7 +151,7 @@
 	
 
 	
-	<Script file="modules\skins\core.lua"/>
+	
 	<Script file="modules\skins\achievement.lua"/>
 	<Script file="modules\skins\achievementpopup.lua"/>
 	<Script file="modules\skins\archeology.lua"/>
