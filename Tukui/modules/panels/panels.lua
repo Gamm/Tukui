@@ -73,8 +73,12 @@ TukuiBar7:SetAlpha(0)
 TukuiBar7:SetBackdrop(nil)
 
 local petbg = CreateFrame("Frame", "TukuiPetBar", UIParent, "SecureHandlerStateTemplate")
-petbg:CreatePanel("Invisible", (T.petbuttonsize * 10) + (T.petbuttonspacing * 9), T.petbuttonsize, "BOTTOM", TukuiBar5, "TOP", 0, 5)
-petbg:SetBackdrop(nil)
+petbg:CreatePanel("Transparent", (T.petbuttonsize * 10) + (T.petbuttonspacing * 9), T.petbuttonsize, "BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -48, 168)
+-- fucking spirit wolves.
+if T.myclass == "SHAMAN" then
+	petbg:Point("BOTTOM", TukuiBar1 or TukuiBar4, "TOP", 0, 13)
+end
+petbg:SetAlpha(0)
 
 local ltpetbg1 = CreateFrame("Frame", "TukuiLineToPetActionBarBackground", petbg)
 ltpetbg1:CreatePanel("Invisible", 24, 265, "LEFT", petbg, "RIGHT", 0, 0)
@@ -90,38 +94,30 @@ if C.actionbar.bgPanel then
 		_G["TukuiBar"..i]:SetBackdropColor(0,0,0,1)
 	end
 	petbg:SetTemplate("Default")
-	petbg:CreateBorder(false, true)
 	petbg:SetBackdropColor(0,0,0,1)
 	petbg:SetWidth((T.petbuttonsize * 10) + (T.petbuttonspacing * 11))
 	petbg:SetHeight(T.petbuttonsize + (T.petbuttonspacing * 2))
 	
 	TukuiBar1:SetWidth((T.buttonsize * mbWidth) + (T.buttonspacing * (mbWidth+1)))
 	TukuiBar1:SetHeight((T.buttonsize * 2) + (T.buttonspacing*3))
-	TukuiBar1:CreateBorder(false, true)
-	
+		
 	TukuiBar2:SetWidth((T.buttonsize * sbWidth) + (T.buttonspacing * (sbWidth+1)))
 	TukuiBar2:SetHeight((T.buttonsize * 2) + (T.buttonspacing*3))
-	TukuiBar2:CreateBorder(false, true)
-	
+		
 	TukuiBar3:SetWidth((T.buttonsize * sbWidth) + (T.buttonspacing * (sbWidth+1)))
 	TukuiBar3:SetHeight((T.buttonsize * 2) + (T.buttonspacing*3))
-	TukuiBar3:CreateBorder(false, true)
-	
+		
 	TukuiBar4:SetWidth((T.buttonsize * mbWidth) + (T.buttonspacing * (mbWidth+1)))
 	TukuiBar4:SetHeight((T.buttonsize * 2) + (T.buttonspacing*3))
-	TukuiBar4:CreateBorder(false, true)
-	
+		
 	TukuiBar5:SetWidth((T.buttonsize * 12) + (T.buttonspacing * 13))
 	TukuiBar5:SetHeight((T.buttonsize) + (T.buttonspacing*2))
-	TukuiBar5:CreateBorder(false, true)
-	
+		
 	TukuiBar6:SetWidth((T.buttonsize) + (T.buttonspacing * 2))
 	TukuiBar6:SetHeight((T.buttonsize * 12) + (T.buttonspacing * 13))
-	TukuiBar6:CreateBorder(false, true)
-	
+		
 	TukuiBar7:SetWidth((T.buttonsize) + (T.buttonspacing * 2))
 	TukuiBar7:SetHeight((T.buttonsize * 12) + (T.buttonspacing * 13))
-	TukuiBar7:CreateBorder(false, true)
 end
 
 -- Default FRAME COVERING BOTTOM ACTIONBARS JUST TO PARENT UF CORRECTLY
@@ -268,4 +264,6 @@ if C["datatext"].battleground == true then
 	bgframe:SetFrameLevel(0)
 	bgframe:EnableMouse(true)
 end
+
+
 
