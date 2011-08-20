@@ -1068,7 +1068,7 @@ do
 			end
 			
 			local bar = CreateFrame( "StatusBar", nil, result, nil );
-			bar:SetStatusBarTexture( C["media"].empath );
+			bar:SetStatusBarTexture( C["media"].normTex );
 			if ( bit.band( ICON_POSITION, 2 ) == 2 or bit.band( ICON_POSITION, 4 ) == 4 ) then
 				bar:SetPoint( "TOPLEFT", result, "TOPLEFT", 0, 0 );
 				bar:SetPoint( "BOTTOMRIGHT", result, "BOTTOMRIGHT", 0, 0 );
@@ -1233,7 +1233,7 @@ do
 		
 		local background = result:CreateTexture( nil, "BACKGROUND", nil );
 		background:SetAlpha( BACKGROUND_ALPHA );
-		background:SetTexture( C["media"].empath );
+		background:SetTexture( C["media"].normTex );
 		background:SetPoint( "TOPLEFT", result, "TOPLEFT", 0, 0 );
 		background:SetPoint( "BOTTOMRIGHT", result, "BOTTOMRIGHT", 0, 0 );
 		background:SetVertexColor( 0.15, 0.15, 0.15 );
