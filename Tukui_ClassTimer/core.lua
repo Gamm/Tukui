@@ -186,6 +186,14 @@ local TRINKET_FILTER = {
 		--HM Nef
 		CreateSpellEntry( 80627, nil, {1, 0.08, 0.58, 1} ), --Stolen Power
 		
+		--Firelands
+		CreateSpellEntry( 96963 ),  -- necromantic (Normal)
+		CreateSpellEntry( 96962 ),  -- necromantic (Normal) soul fragment
+		CreateSpellEntry( 97132 ),  -- necromantic (Heroic)
+		CreateSpellEntry( 97131 ),  -- necromantic (Heroic) soul fragment
+		CreateSpellEntry( 96890 ),  -- variable pulse lightning gen (normal) electrical charge
+		CreateSpellEntry( 97007 ),  -- Rune of Zeth - Mark of the firelord
+		
 		
 		--T11 set procs
 		--DeathKnight
@@ -487,6 +495,7 @@ local CLASS_FILTERS = {
                 CreateSpellEntry( 2944 ), -- Devouring Plague
                 CreateSpellEntry( 48153 ), -- Guardian Spirit
 				CreateSpellEntry( 77489 ), -- Echo of Light
+				CreateSpellEntry( 14914 ), -- Holy Fire
             },
             player = {
                 CreateSpellEntry( 10060 ), -- Power Infusion
